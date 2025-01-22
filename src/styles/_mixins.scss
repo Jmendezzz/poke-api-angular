@@ -1,0 +1,199 @@
+@import './variables';
+
+@mixin flex($direction: row, $align: center, $justify: center, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-center {
+  @include flex(row, center, center);
+}
+
+@mixin flex-col($align: center, $justify: center) {
+  @include flex(column, $align, $justify);
+}
+
+// Spacing Utilities
+@mixin margin($value: 1rem) {
+  margin: $value;
+}
+
+@mixin padding($value: 1rem) {
+  padding: $value;
+}
+
+@mixin padding-y($value: 1rem) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+@mixin padding-x($value: 1rem) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin space-x($value: 1rem) {
+  > * + * {
+    margin-left: $value;
+  }
+}
+
+@mixin space-y($value: 1rem) {
+  > * + * {
+    margin-top: $value;
+  }
+}
+
+// Typography Utilities
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-sm {
+  font-size: 0.875rem;
+  @include laptop(){
+    font-size: 0.975rem;
+  }
+  @include desktop(){
+    font-size: 1rem;
+  }
+}
+
+@mixin text-md {
+  font-size: 1rem;
+
+  @include laptop(){
+    font-size: 1.125rem;
+  }
+  @include desktop(){
+    font-size: 1.2rem;
+  }
+}
+
+@mixin text-lg {
+  font-size: 1.25rem;
+  @include tablet(){
+    font-size: 1.375rem;
+  }
+  @include laptop(){
+    font-size: 1.5rem;
+  }
+  @include desktop(){
+    font-size: 1.625rem;
+  }
+}
+
+@mixin text-xl {
+  font-size: 1.5rem;
+  @include tablet(){
+    font-size: 1.7rem;
+  }
+  @include laptop(){
+    font-size: 1.8rem;
+  }
+  @include desktop(){
+    font-size: 2rem;
+  }
+}
+
+@mixin text-2xl {
+  font-size: 1.75rem;
+  @include tablet(){
+    font-size: 1.875rem;
+  }
+  @include laptop(){
+    font-size: 2rem;
+  }
+  @include desktop(){
+    font-size: 2.125rem;
+  }
+}
+
+@mixin text-3xl {
+  font-size: 2rem;
+  @include tablet(){
+    font-size: 2.125rem;
+  }
+  @include laptop(){
+    font-size: 2.25rem;
+  }
+  @include desktop(){
+    font-size: 2.375rem;
+  }
+}
+
+@mixin text-bold {
+  font-weight: 700;
+}
+
+@mixin mobile() {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+@mixin tablet() {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+@mixin laptop() {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+@mixin desktop() {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin container() {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+@mixin padding-y($value) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+@mixin padding-x($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+@mixin margin-y($value) {
+  margin-top: $value;
+  margin-bottom: $value;
+}
+@mixin margin-x($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin shadow() {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+@mixin border-radius-sm() {
+  border-radius: 4px;
+}
+@mixin border-radius-md() {
+  border-radius: 8px;
+}
+@mixin border-radius-lg() {
+  border-radius: 16px;
+}
+@mixin boder-radius-xl() {
+  border-radius: 24px;
+}
+@mixin border-radius-full() {
+  border-radius: 50%;
+}
+
+@mixin transition($property: all, $duration: 0.3s, $timing: ease-in-out) {
+  transition: $property $duration $timing;
+}

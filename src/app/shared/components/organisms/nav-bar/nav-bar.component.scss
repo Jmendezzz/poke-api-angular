@@ -1,0 +1,23 @@
+@import 'mixins';
+@import 'variables';
+
+.nav{
+    width: 100%;
+    @include padding-y(1rem);
+    @include padding-x(1rem);
+
+    &__list{
+        @include flex();
+        gap: 1rem;
+        @include container();
+
+        &--right{
+            justify-content: flex-end;
+        }
+
+    }
+
+    &__item{
+        list-style: none;
+    }
+}
