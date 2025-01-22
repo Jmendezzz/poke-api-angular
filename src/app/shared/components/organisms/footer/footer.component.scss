@@ -3,8 +3,9 @@
 
 .footer {
   background-color: $bg-white-color;
-  padding: 2rem 0;
+  padding: 1rem 0;
   @include shadow();
+  margin-top: 4rem;
 
   &__content {
     @include container();

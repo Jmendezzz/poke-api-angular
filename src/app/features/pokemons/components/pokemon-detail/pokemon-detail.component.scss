@@ -1,0 +1,78 @@
+@import 'mixins';
+@import 'variables';
+
+.pokemon-detail {
+  padding: 1rem;
+  @include border-radius-md();
+  @include flex-col(center, center);
+  text-align: center;
+
+  &__loading {
+    @include flex-col(center, center);
+    flex:1;
+  }
+
+  &__header {
+    @include flex-col(center, center);
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &__name {
+    @include text-md();
+    @include text-bold();
+    color: $secondary-color;
+  }
+
+  &__info {
+    @include flex-col(center, center);
+
+  }
+
+  &__abilities {
+    margin-top: 1rem;
+
+    h2 {
+      @include text-md();
+      @include text-bold();
+      color: $primary-color;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        @include text-md();
+        margin: 0.5rem 0;
+      }
+    }
+  }
+
+
+  @include laptop() {
+    padding: 3rem;
+
+    &__header {
+      img {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    &__name {
+      @include text-lg();
+    }
+
+    &__info {
+      p {
+        @include text-md();
+      }
+    }
+
+   
+  }
+}

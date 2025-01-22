@@ -1,0 +1,20 @@
+<nav class="pagination" *ngIf="totalPages > 1">
+  <ul class="pagination__list">
+    <li class="pagination__item" [class.disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">
+      <app-button size="small" type="secondary">Anterior</app-button>
+    </li>
+    <li class="pagination__item" *ngFor="let page of pages" [class.active]="currentPage === page"
+      (click)="changePage(page)">
+      <span class="pagination__link">{{ page }}</span>
+    </li>
+    <li class="pagination__item" [class.disabled]="currentPage === totalPages" (click)="changePage(currentPage + 1)">
+      <app-button size="small" type="secondary">Siguiente</app-button>
+    </li>
+  </ul>
+  <div class="pagination__items-per-page">
+    <label for="itemsPerPage">Resultados por página:</label>
+    <select id="itemsPerPage" [ngModel]="itemsPerPage" (ngModelChange)="changeItemsPerPage($event)">
+      <option *ngFor="let option of itemsPerPageOptions" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+</nav>

@@ -1,0 +1,11 @@
+<div class="pokemon-list__content">
+    <app-heading headingLevel="h2" class="pokemon-list__title">Pokemones</app-heading>
+    <div class="pokemon-list__container">
+        <div *ngIf="isLoading || !data" class="pokemon-list__loading">
+            <app-spinner></app-spinner>
+        </div>
+        <app-pokemon-card *ngFor="let pokemon of data?.results" [pokemon]="pokemon"></app-pokemon-card>
+    </div>
+
+    <app-pagination [totalItems]="totalItems"></app-pagination>
+</div>

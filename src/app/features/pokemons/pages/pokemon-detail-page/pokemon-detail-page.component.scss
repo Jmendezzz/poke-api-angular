@@ -1,0 +1,14 @@
+@import 'mixins';
+@import 'variables';
+
+.pokemon-detail{
+    width: 100%;
+    height: 100%;
+    &__content{
+        @include flex-col();
+        @include container();
+        gap: 2rem;
+        height: 100%;
+    }
+
+}

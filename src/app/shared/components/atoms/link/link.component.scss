@@ -7,10 +7,8 @@
     @include text-bold();
 
     @include transition();
+    
     &:hover{
-        color: $primary-color;
-    }
-    &--active{
-        color: $primary-color;
+        color: $secondary-color;
     }
 }
